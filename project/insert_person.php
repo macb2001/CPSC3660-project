@@ -10,6 +10,7 @@
     </script>
 
     <!-- Javscript method to check if at least one box is checked upon submission -->
+		<!-- If agent is checked, commission field is required -->
     <script type = "text/javascript">
       function validateSubmission() {
         if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
