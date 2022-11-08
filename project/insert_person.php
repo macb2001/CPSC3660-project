@@ -1,12 +1,15 @@
 <html>
 	<head>
     <title>Fake Street Realty</title>
+    <!-- Javascript method to open commission dialog if box checked -->
     <script type = "text/javascript">
       function promptCommission(cbox) {
         var input = document.getElementById("commissionPrompt");
         input.style.display = agent.checked ? "block" : "none";
       }
     </script>
+
+    <!-- Javscript method to check if at least one box is checked upon submission -->
     <script type = "text/javascript">
       function validateChecks() {
         if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
@@ -21,6 +24,7 @@
   <h1>Insert Client/Agent</h1>
 	<body>
 
+    <!-- Attribute inputs -->
 		<form action="insertperson.php" method=post onsubmit="return validateChecks()">
       <div id = attributes>
         <label for="name">Name:</label>
@@ -33,18 +37,21 @@
           <input type = tel name = "phone" id = "phone" size = "10"  pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}"><br><br>
       </div>
 
+      <!-- Client/agent check boxes -->
       <div = "clientAgentBox">
         <input type="checkbox" id="client" name="client" value="client">
           <label for="client">Client</label><br>
         <input type="checkbox" id="agent" name="agent" value="agent" onclick="promptCommission(this)">
           <label for="agent">Agent</label><br>
 
+        <!-- agent commission input -->
         <div id = "commissionPrompt" style = "display: none">
           <label for="commission">Commission:</label>
             <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10" required><br><br>
         </div>
       </div>
 
+      <!-- submissio button -->
       <div id = "submit">
 		     <input type = submit value = "Submit" name="submit">
       </div>

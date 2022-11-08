@@ -8,6 +8,7 @@
       }
     </script>
 	</head>
+	
 	<body>
 		<h2>Add a Property</h2>
 		<form action="insertproperty.php" method=post>
