@@ -21,15 +21,17 @@
         }
 
 				if (document.getElementById("agent").checked) {
-					agent.required = true;
+					agent.setAttribute("required", "");
 				} else {
-					agent.required = false;
+					agent.removeAttribute("required");
 				}
 
       }
     </script>
   </head>
+
   <h1>Insert Client/Agent</h1>
+
 	<body>
 
     <!-- Attribute inputs -->
@@ -56,7 +58,8 @@
         <!-- agent commission input -->
         <div id = "commissionPrompt" style = "display: none">
           <label for="commission">Commission:</label>
-            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10"><br><br>
+            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10">
+							<label>%</label><br><br>
         </div>
       </div>
 
