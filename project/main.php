@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Fake Street Realty</title>
-    <h1>Insert Client/Agent</h1>
+    <h1>Fake Street Realty</h1>
   </head>
 
   <body>

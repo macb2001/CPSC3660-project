@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Fake Street Realty - Login</title>
+    <h1>Fake Street Realty - Login</h1>
   </head>
   <body>
     <form action="setpass.php" method=post>
