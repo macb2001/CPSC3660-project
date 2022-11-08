@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Fake Street Realty - Login</title>
+    <title>Fake Street Realty</title>
     <h1>Fake Street Realty - Login</h1>
   </head>
   <body>

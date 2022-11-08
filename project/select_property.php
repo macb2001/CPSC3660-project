@@ -1,5 +1,7 @@
 <html>
-	<head><title>Fake Street Realty</title></head>
+	<head>
+		<title>Fake Street Realty</title>
+	</head>
 	<body>
 
 	</body>

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>View Clients</title>
+  <title>Fake Street Realty</title>
 </head>
 <body>
   <?php
