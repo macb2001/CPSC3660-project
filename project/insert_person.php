@@ -21,6 +21,8 @@
 
 				if (document.getElementById("agent").checked) {
 					agent.required = true;
+				} else {
+					agent.required = false;
 				}
 
       }
@@ -53,7 +55,7 @@
         <!-- agent commission input -->
         <div id = "commissionPrompt" style = "display: none">
           <label for="commission">Commission:</label>
-            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10" placeholder= "0"><br><br>
+            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10"><br><br>
         </div>
       </div>
 
