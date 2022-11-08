@@ -21,9 +21,9 @@
         }
 
 				if (document.getElementById("agent").checked) {
-					agent.required = true;
+					agent.setAttribute("required", "");
 				} else {
-					agent.required = false;
+					agent.removeAttribute("required");
 				}
 
       }
