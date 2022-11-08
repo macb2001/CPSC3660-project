@@ -11,13 +11,18 @@
 
     <!-- Javscript method to check if at least one box is checked upon submission -->
     <script type = "text/javascript">
-      function validateChecks() {
+      function validateSubmission() {
         if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
           alert("At least one checkbox must be checked!");
           return false;
         } else {
           return true;
         }
+
+				if (document.getElementById("agent").checked) {
+					agent.required = true;
+				}
+
       }
     </script>
   </head>
@@ -25,10 +30,11 @@
 	<body>
 
     <!-- Attribute inputs -->
-		<form action="insertperson.php" method=post onsubmit="return validateChecks()">
+		<form action="insertperson.php" method=post onsubmit="return validateSubmission()">
       <div id = attributes>
         <label for="name">Name:</label>
-          <input type = text name = "name" id = "name" size = "10" required><br><br>
+          <input type = text name = "name" id = "name" size = "10" required>
+						<label>*</label><br><br>
         <label for="dob">Date of Birth:</label>
           <input type = date name = "dob" id = "dob" size = "10"><br><br>
         <label for="address">Address:</label>
