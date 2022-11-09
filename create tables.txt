@@ -1,0 +1,37 @@
+CREATE TABLE PERSON (
+id int AUTO_INCREMENT,
+name varchar(255),
+dob date,
+address varchar(255),
+phone varchar(255),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE CLIENT (
+c_id int,
+PRIMARY KEY (c_id),
+FOREIGN KEY (c_id) REFERENCES PERSON(id)
+);
+
+CREATE TABLE AGENT (
+a_id int,
+commission int,
+PRIMARY KEY (a_id),
+FOREIGN KEY (a_id) REFERENCES PERSON(id)
+);
+
+CREATE TABLE PROPERTY (
+address varchar(255), 
+a_id int,
+c_id int,
+square_foot int, 
+asking_price int,
+sold bit, 
+const_date date, 
+bedroom int, 
+sale_price int, 
+bathroom int,
+PRIMARY KEY (address),
+FOREIGN KEY (a_id) REFERENCES AGENT(a_id),
+FOREIGN KEY (c_id) REFERENCES CLIENT(c_id)
+);
