@@ -37,6 +37,7 @@ if (isset($_COOKIE["username"])) {
     } else {
     $err = $conn->errno;
     echo "<p>MySQL error code $err </p>";
+    echo "<a href='main.php'>back</a>";
   }
 } else {
   echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
