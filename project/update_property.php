@@ -1,9 +1,12 @@
 <html>
 	<head>
 		<title>Fake Street Realty</title>
-		<h1>Update Property</h1>
 	</head>
-	<body>
 
-	</body>
+	<center>
+		<h1>Update Property</h1>
+		<body>
+
+		</body>
+	</center>
 </html>

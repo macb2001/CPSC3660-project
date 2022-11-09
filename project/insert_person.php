@@ -28,44 +28,44 @@
     </script>
   </head>
 
-  <h1>Insert Client/Agent</h1>
+	<center>
+	  <h1>Insert Client/Agent</h1>
+		<body>
+	    <!-- Attribute inputs -->
+			<form action="insertperson.php" method=post onsubmit="return validateSubmission()">
+	      <div id = attributes>
+	        <label for="name">Name:</label>
+	          <input type = text name = "name" id = "name" size = "10" required>
+							<label>*</label><br><br>
+	        <label for="dob">Date of Birth:</label>
+	          <input type = date name = "dob" id = "dob" size = "10"><br><br>
+	        <label for="address">Address:</label>
+	          <input type = text name = "address" id = "address" size = "10"><br><br>
+	        <label for="phone">Phone Number:</label>
+	          <input type = tel name = "phone" id = "phone" size = "10" maxlength = "11" minlength = "7"><br><br>
+	      </div>
 
-	<body>
+	      <!-- Client/agent check boxes -->
+	      <div = "clientAgentBox">
+	        <input type="checkbox" id="client" name="client" value="client">
+	          <label for="client">Client</label><br>
+	        <input type="checkbox" id="agent" name="agent" value="agent" onclick="promptCommission(this)">
+	          <label for="agent">Agent</label><br>
 
-    <!-- Attribute inputs -->
-		<form action="insertperson.php" method=post onsubmit="return validateSubmission()">
-      <div id = attributes>
-        <label for="name">Name:</label>
-          <input type = text name = "name" id = "name" size = "10" required>
-						<label>*</label><br><br>
-        <label for="dob">Date of Birth:</label>
-          <input type = date name = "dob" id = "dob" size = "10"><br><br>
-        <label for="address">Address:</label>
-          <input type = text name = "address" id = "address" size = "10"><br><br>
-        <label for="phone">Phone Number:</label>
-          <input type = tel name = "phone" id = "phone" size = "10" maxlength = "11" minlength = "7"><br><br>
-      </div>
+	        <!-- agent commission input -->
+	        <div id = "commissionPrompt" style = "display: none">
+	          <label for="commission">Commission:</label>
+	            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10">
+								<label>%</label><br><br>
+	        </div>
+	      </div>
 
-      <!-- Client/agent check boxes -->
-      <div = "clientAgentBox">
-        <input type="checkbox" id="client" name="client" value="client">
-          <label for="client">Client</label><br>
-        <input type="checkbox" id="agent" name="agent" value="agent" onclick="promptCommission(this)">
-          <label for="agent">Agent</label><br>
+	      <!-- submissio button -->
+	      <div id = "submit">
+			     <input type = submit value = "Submit" name="submit">
+	      </div>
+			</form>
 
-        <!-- agent commission input -->
-        <div id = "commissionPrompt" style = "display: none">
-          <label for="commission">Commission:</label>
-            <input type = "number" min = "0" max = "100" id = "commission" name = "commission" size = "10">
-							<label>%</label><br><br>
-        </div>
-      </div>
-
-      <!-- submissio button -->
-      <div id = "submit">
-		     <input type = submit value = "Submit" name="submit">
-      </div>
-		</form>
-
-	</body>
+		</body>
+	</center>
 </html>
