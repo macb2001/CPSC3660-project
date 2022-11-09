@@ -21,11 +21,11 @@
 					<label for="sold">Sold</label><br>
 			</div><br>
 			<div id = "salepricePrompt" style = "display: none">
-				Sale Price: <input type=number name="saleprice" size=20 min = "0"><br><br>
+				Sale Price: <input type=number name="saleprice" size=20 min = "0">
 					<label>$</label><br><br>
 			</div>
 
-			Squarefootage: <input type=number name="saleprice" size=20 min = "0"><br><br>
+			Squarefootage: <input type=number name="saleprice" size=20 min = "0">
 				<label>sq. ft.</label><br><br>
 			Number of Beds: <input type=number name="bedrooms" size=20 min = "0"><br><br>
 			Number of Baths: <input type=number name="bathrooms" size=20 min = "0"><br><br>
