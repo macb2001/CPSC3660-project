@@ -39,8 +39,8 @@
             <td>{$data['dob']}</td>
             <td>{$data['address']}</td>
             <td>{$data['phone']}</td>
-            <td><a href='update_client.php?id={$data['a_id']}'>Update</a></td>
-            <td><a href='delete_client.php?id={$data['a_id']}'>Delete</a></td>
+            <td><a href='update_client.php?id={$data['c_id']}'>Update</a></td>
+            <td><a href='delete_client.php?id={$data['c_id']}'>Delete</a></td>
           </tr>
          ";
        }
