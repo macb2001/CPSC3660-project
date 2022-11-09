@@ -2,7 +2,10 @@
 	<head>
 		<title>Fake Street Realty</title>
 	</head>
-	<body>
 
-	</body>
+	<center>
+		<body>
+
+		</body>
+	</center>
 </html>
