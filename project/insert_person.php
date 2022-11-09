@@ -13,19 +13,18 @@
 		<!-- If agent is checked, commission field is required -->
     <script type = "text/javascript">
       function validateSubmission() {
-        if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
-          alert("At least one checkbox must be checked!");
-          return false;
-        } else {
-          return true;
-        }
-
 				if (document.getElementById("agent").checked) {
 					commission.setAttribute("required", "");
 				} else {
 					commission.removeAttribute("required");
 				}
 
+        if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
+          alert("At least one checkbox must be checked!");
+          return false;
+        } else {
+          return true;
+        }
       }
     </script>
   </head>

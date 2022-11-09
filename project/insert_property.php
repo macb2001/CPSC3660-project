@@ -20,7 +20,7 @@
 
 	<body>
 		<h2>Add a Property</h2>
-		<form action="insertproperty.php" method=post>
+		<form action="insertproperty.php" method=post onsubmit="validateSubmission()">
 			Address: <input type=text name="address" size=20 required required><br><br>
 			Asking Price: $<input type=number name="askingprice" size=20 min = "0" required><br><br>
 
