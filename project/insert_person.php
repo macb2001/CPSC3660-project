@@ -21,9 +21,9 @@
         }
 
 				if (document.getElementById("agent").checked) {
-					agent.setAttribute("required", "");
+					commission.setAttribute("required", "");
 				} else {
-					agent.removeAttribute("required");
+					commission.removeAttribute("required");
 				}
 
       }
