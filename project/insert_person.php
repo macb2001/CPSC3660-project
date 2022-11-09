@@ -6,6 +6,7 @@
       function promptCommission(cbox) {
         var input = document.getElementById("commissionPrompt");
         input.style.display = agent.checked ? "block" : "none";
+				commission.setAttribute("required", "");
       }
     </script>
 
@@ -13,9 +14,7 @@
 		<!-- If agent is checked, commission field is required -->
     <script type = "text/javascript">
       function validateSubmission() {
-				if (document.getElementById("agent").checked) {
-					commission.setAttribute("required", "");
-				} else {
+				if (document.getElementById("agent").checked && commission.hasAttribute("required")) {
 					commission.removeAttribute("required");
 				}
 

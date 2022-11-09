@@ -5,13 +5,12 @@
       function promptSold(cbox) {
         var input = document.getElementById("salepricePrompt");
         input.style.display = sold.checked ? "block" : "none";
+				saleprice.setAttribute("required", "");
       }
     </script>
 		<script type = "text/javascript">
 			function validateSubmission() {
-				if (document.getElementById("sold").checked) {
-					saleprice.setAttribute("required", "");
-				} else {
+				if (!(document.getElementById("sold").checked) && saleprice.hasAttribute("required")) {
 					saleprice.removeAttribute("required");
 				}
       }
