@@ -25,8 +25,8 @@
 						<table border='1'>
 							<tr>
 								<th>Address</th>
-								<th>a_id</th>
-								<th>c_id</th>
+								<th>Agent</th>
+								<th>Client</th>
 								<th>Square foot</th>
 								<th>Asking price</th>
 								<th>Sold</th>
@@ -38,17 +38,38 @@
 					 ";
 
 					 foreach ($result as $data) {
+						 if ($data['sold']) {
+						 	$sold = 'Yes';
+							$sp = $data['sale_price'];
+						} else {
+							$sold = 'No';
+							$sp = 'N/A';
+						}
+						$a_name = '';
+						$c_name = '';
+						$agSql = "SELECT name FROM PERSON WHERE id = '{$data['a_id']}';";
+						if($conn->query($agSql)) {
+							$agResult = $conn->query($agSql);
+							$row = $agResult->fetch_assoc();
+							$a_name = $row['name'];
+						}
+						$cliSql = "SELECT name FROM PERSON WHERE id = '{$data['c_id']}';";
+						if($conn->query($cliSql)) {
+							$cliResult = $conn->query($cliSql);
+							$row = $cliResult->fetch_assoc();
+							$c_name = $row['name'];
+						}
 						 echo "
 							<tr>
 								<td>{$data['address']}</td>
-								<td>{$data['a_id']}</td>
-								<td>{$data['c_id']}</td>
+								<td>$a_name</td>
+								<td>$c_name</td>
 								<td>{$data['square_foot']}</td>
 								<td>{$data['asking_price']}</td>
-								<td>{$data['sold']}</td>
+								<td>$sold</td>
 								<td>{$data['const_date']}</td>
 								<td>{$data['bedroom']}</td>
-								<td>{$data['sale_price']}</td>
+								<td>$sp</td>
 								<td>{$data['bedroom']}</td>
 								<td><a href='update_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Update</a></td>
 								<td><a href='delete_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Delete</a></td>
