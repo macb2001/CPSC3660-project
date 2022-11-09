@@ -13,16 +13,14 @@
 		<h2>Add a Property</h2>
 		<form action="insertproperty.php" method=post>
 			Address: <input type=text name="address" size=20 required><br><br>
-			Asking Price: <input type=number name="askingprice" size=20 min = "0">
-				<label>$</label><br><br>
+			Asking Price: $<input type=number name="askingprice" size=20 min = "0"><br><br>
 
 			<div = "soldBox">
 				<input type="checkbox" id="sold" name="sold" value="sold" onclick="promptSold(this)">
 					<label for="sold">Sold</label><br>
 			</div><br>
 			<div id = "salepricePrompt" style = "display: none">
-				Sale Price: <input type=number name="saleprice" size=20 min = "0">
-					<label>$</label><br><br>
+				Sale Price: $<input type=number name="saleprice" size=20 min = "0"><br><br>
 			</div>
 
 			Squarefootage: <input type=number name="saleprice" size=20 min = "0">
