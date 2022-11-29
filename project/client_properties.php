@@ -6,7 +6,7 @@
 	<center>
 		<h1>List Properties By Client</h1>
 		<body>
-    <form action="agentproperties.php" method=post>
+    <form action="clientproperties.php" method=post>
     	<?php
         if (isset($_COOKIE["username"])) {
           $username = $_COOKIE["username"];

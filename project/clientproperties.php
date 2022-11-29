@@ -26,7 +26,7 @@
           }
 
           $sql = "SELECT address, a_id, c_id, square_foot, asking_price, sold,
-           const_date, bedroom, sale_price, bathroom FROM PROPERTY WHERE a_id = '$client_id';";
+           const_date, bedroom, sale_price, bathroom FROM PROPERTY WHERE c_id = '$client_id';";
 
           if($conn->query($sql)) {
             $result = $conn->query($sql);
