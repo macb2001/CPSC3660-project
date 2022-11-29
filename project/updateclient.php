@@ -26,7 +26,7 @@ if (isset($_COOKIE["username"])) {
     WHERE id = '$id';";
     if (isset($_POST['agent'])) {
       $comm = $_POST['commission'];
-      $agSql = "INSERT INTO AGENT VALUES '$id', '$comm';";
+      $agSql = "INSERT INTO AGENT (a_id, commission)VALUES ('$id', '$comm');";
       if ($conn->query($agSql)) {
         echo "Agent record added successfully.<br />";
       } else {
