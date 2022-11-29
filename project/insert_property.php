@@ -3,15 +3,15 @@
 		<title>Fake Street Realty</title>
 		<script type = "text/javascript">
       function promptSold(cbox) {
-        var input = document.getElementById("salepricePrompt");
-        input.style.display = sold.checked ? "block" : "none";
-				saleprice.setAttribute("required", "");
-      }
-    </script>
-		<script type = "text/javascript">
-			function validateSubmission() {
-				if (!(document.getElementById("sold").checked) && saleprice.hasAttribute("required")) {
-					saleprice.removeAttribute("required");
+				var input = document.getElementById("salepricePrompt");
+				if (sold.checked) {
+					saleprice.setAttribute("required", "");
+					input.style.display = "block";
+				} else {
+					if (saleprice.hasAttribute("required")) {
+						saleprice.removeAttribute("required");
+					}
+					input.style.display = "none";
 				}
       }
     </script>
@@ -22,7 +22,7 @@
 		<body>
 
 
-			<form action="insertproperty.php" method=post onsubmit="validateSubmission()">
+			<form action="insertproperty.php" method=post>
 
 				<?php
 
