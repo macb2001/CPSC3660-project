@@ -12,6 +12,8 @@
         <li><a href="select_agent.php">list Agents</a></li>
         <li><a href="select_client.php">list Clients</a></li>
         <li><a href="insert_property.php">Insert a Property</a></li>
+        <li><a href="agent_properties.php">List Properties by Agent</a></li>
+        <li><a href="client_properties.php">List Properties by Client</a></li>
         <li><a href="select_property.php">List all Properties</a></li>
       </ul>
       <p><a href="logout.php">Logout</a></p>
