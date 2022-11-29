@@ -2,6 +2,7 @@
 <head>
   <title>Fake Street Realty</title>
 </head>
+<center>
 <body>
   <?php
 
@@ -62,5 +63,6 @@
   }
   ?>
 </body>
+</center>
 
 </html>
