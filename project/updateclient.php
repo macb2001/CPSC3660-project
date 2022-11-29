@@ -21,19 +21,20 @@ if (isset($_COOKIE["username"])) {
     exit;
   }
 
+  if (isset($_POST['agent'])) {
+    $comm = $_POST['commission'];
+    $agSql = "INSERT INTO AGENT (a_id, commission)VALUES ('$id', '$comm');";
+    if ($conn->query($agSql)) {
+      echo "Agent record added successfully.<br />";
+    } else {
+      $err = $conn->errno;
+      echo "<p>MySQL error code $err </p>";
+    }
+  }
+
   $sql = "UPDATE PERSON
     SET name = '$name', dob = '$dob', address = '$address', phone = '$phone'
     WHERE id = '$id';";
-    if (isset($_POST['agent'])) {
-      $comm = $_POST['commission'];
-      $agSql = "INSERT INTO AGENT (a_id, commission)VALUES ('$id', '$comm');";
-      if ($conn->query($agSql)) {
-        echo "Agent record added successfully.<br />";
-      } else {
-        $err = $conn->errno;
-        echo "<p>MySQL error code $err </p>";
-      }
-    }
     if($conn->query($sql)) {
       echo "<p>Record updated successfully.\n</p>";
       echo "<a href='main.php'>back</a>";
