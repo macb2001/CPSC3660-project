@@ -36,6 +36,9 @@ if (isset($_COOKIE["username"])) {
 		$phone = $row['phone'];
 		$comm = $row['commission'];
 
+		$cliCheckSql = "SELECT c_id FROM CLIENT WHERE c_id = '$id';";
+    $cliCheck = $conn->query($cliCheckSql);
+
   echo "
 	<!-- Attribute inputs -->
 		<form action='updateagent.php' method=post>
@@ -54,9 +57,17 @@ if (isset($_COOKIE["username"])) {
           <input type = 'number' min = '0' max = '100' id = 'commission' name = 'commission' size = '10' value = '$comm'>
 						<label>%</label><br><br>
         </div>
-      </div>
+      </div>";
 
-      <!-- submission button -->
+			if ($cliCheck->num_rows == 0) {
+				echo "
+				<label for='client'>Make this agent a client?</label>
+				<input type='checkbox' id='client' name='client'><br />";
+			} else {
+				echo "This agent is also a client, so updating their information
+				here will update their information in the Client table as well.<br />";
+			}
+      echo "<!-- submission button -->
       <div id = 'submit'>
 		     <input type = submit value = 'Submit' name='submit'>
       </div>

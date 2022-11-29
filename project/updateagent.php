@@ -22,6 +22,16 @@ if (isset($_COOKIE["username"])) {
     exit;
   }
 
+  if (isset($_POST['client'])) {
+    $cliSql = "INSERT INTO CLIENT (c_id)VALUES ('$id');";
+    if ($conn->query($cliSql)) {
+      echo "Client record added successfully.<br />";
+    } else {
+      $err = $conn->errno;
+      echo "<p>MySQL error code $err </p>";
+    }
+  }
+
   $sql = "UPDATE PERSON
     SET name = '$name', dob = '$dob', address = '$address', phone = '$phone'
     WHERE id = '$id';";
