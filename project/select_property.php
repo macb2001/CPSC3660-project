@@ -70,7 +70,7 @@
 								<td>{$data['const_date']}</td>
 								<td>{$data['bedroom']}</td>
 								<td>$sp</td>
-								<td>{$data['bedroom']}</td>
+								<td>{$data['bathroom']}</td>
 								<td><a href='update_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Update</a></td>
 								<td><a href='delete_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Delete</a></td>
 							</tr>
