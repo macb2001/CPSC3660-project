@@ -102,7 +102,13 @@
 								<label>sq. ft.</label><br><br>
 							Number of Beds: <input type=number name='bedrooms' value = '$old_bedroom'size=20 min = '0' required><br><br>
 							Number of Baths: <input type=number name='bathrooms' value = '$old_bath' size=20 min = '0' required><br><br>
-							Date constructed: <input type=date name='constdate' size=20 required><br><br>
+							Date constructed: <input type=date name='constdate' size=20 value = '$old_const_date' required><br><br>
+
+
+							<input type=hidden name='gaddress' size=20 value = '$gaddress' required required>
+							<input type=hidden name='gaid' size=20 value = '$gaid' required required>
+							<input type=hidden name='gcid' size=20 value = '$gcid' required required>
+
 
 							<input type=submit name='submit' value='Submit'></form>";
 
