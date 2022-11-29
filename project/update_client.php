@@ -1,6 +1,23 @@
 <html>
 	<head>
     <title>Fake Street Realty</title>
+		<!-- Javascript method to open commission dialog if box checked -->
+		<script type = "text/javascript">
+      function promptCommission(cbox) {
+        var input = document.getElementById("commissionPrompt");
+        input.style.display = agent.checked ? "block" : "none";
+				commission.setAttribute("required", "");
+      }
+    </script>
+
+		<!-- If agent is checked, commission field is required -->
+    <script type = "text/javascript">
+      function validateSubmission() {
+				if (document.getElementById("agent").checked && commission.hasAttribute("required")) {
+					commission.removeAttribute("required");
+				}
+      }
+		</script>
   </head>
 
 	<body>
@@ -34,6 +51,9 @@ if (isset($_COOKIE["username"])) {
 		$address = $row['address'];
 		$phone = $row['phone'];
 
+		$agCheckSql = "SELECT a_id FROM AGENT WHERE a_id = '$id';";
+    $agCheck = $conn->query($agCheckSql);
+
   echo "
 	<!-- Attribute inputs -->
 		<form action='updateclient.php' method=post>
@@ -47,8 +67,26 @@ if (isset($_COOKIE["username"])) {
         <label for='address'>Address:</label>
           <input type = text name = 'address' id = 'address' size = '10' value = '$address'><br><br>
         <label for='phone'>Phone Number:</label>
-          <input type = tel name = 'phone' id = 'phone' size = '10' maxlength = '11' minlength = '7' value = '$phone'><br><br>
-        </div>
+          <input type = tel name = 'phone' id = 'phone' size = '10' maxlength = '11' minlength = '7' value = '$phone'><br><br>";
+
+					if ($agCheck->num_rows == 0) {
+						echo "
+						<label for='agent'>Make this client an agent?</label>
+						<input type='checkbox' id='agent' name='agent'
+						onclick='promptCommission(this)'><br />";
+					} else {
+						echo "This client is also an agent, so updating their information
+						here will update their information in the Agent table as well.<br />";
+					}
+			echo "
+			<!-- agent commission input -->
+			<div id = 'commissionPrompt' style = 'display: none'>
+				<label for='commission'>Commission:</label>
+					<input type = 'number' min = '0' max = '100' id = 'commission'
+						name = 'commission' size = '10'>
+						<label>%</label><br><br>
+				</div>
+			</div>
       </div>
 
       <!-- submission button -->
