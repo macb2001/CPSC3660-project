@@ -21,19 +21,17 @@ FOREIGN KEY (a_id) REFERENCES PERSON(id)
 );
 
 CREATE TABLE PROPERTY (
-address varchar(255), 
+address varchar(255),
 a_id int,
 c_id int,
-square_foot int, 
+square_foot int,
 asking_price int,
-sold bit, 
-const_date date, 
-bedroom int, 
-sale_price int, 
+sold bit,
+const_date date,
+bedroom int,
+sale_price int,
 bathroom int,
-PRIMARY KEY (address),
-PRIMARY KEY (a_id),
-PRIMARY KEY (c_id),
+PRIMARY KEY (address, a_id, c_id),
 FOREIGN KEY (a_id) REFERENCES AGENT(a_id),
 FOREIGN KEY (c_id) REFERENCES CLIENT(c_id)
 );

@@ -4,9 +4,16 @@
 		<!-- Javascript method to open commission dialog if box checked -->
 		<script type = "text/javascript">
       function promptCommission(cbox) {
-        var input = document.getElementById("commissionPrompt");
-        input.style.display = agent.checked ? "block" : "none";
-				commission.setAttribute("required", "");
+				var input = document.getElementById("commissionPrompt");
+				if (agent.checked) {
+					commission.setAttribute("required", "");
+					input.style.display = "block";
+				} else {
+					if (commission.hasAttribute("required")) {
+						commission.removeAttribute("required");
+					}
+					input.style.display = "none";
+				}
       }
     </script>
 
