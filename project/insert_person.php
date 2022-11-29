@@ -5,8 +5,15 @@
     <script type = "text/javascript">
       function promptCommission(cbox) {
         var input = document.getElementById("commissionPrompt");
-        input.style.display = agent.checked ? "block" : "none";
-				commission.setAttribute("required", "");
+				if (agent.checked) {
+					commission.setAttribute("required", "");
+					input.style.display = "block";
+				} else {
+					if (commission.hasAttribute("required")) {
+						commission.removeAttribute("required");
+					}
+					input.style.display = "none";
+				}
       }
     </script>
 
@@ -14,16 +21,11 @@
 		<!-- If agent is checked, commission field is required -->
     <script type = "text/javascript">
       function validateSubmission() {
-				if (document.getElementById("agent").checked && commission.hasAttribute("required")) {
-					commission.removeAttribute("required");
-				}
-
         if (!(document.getElementById("client").checked || document.getElementById("agent").checked)) {
           alert("At least one checkbox must be checked!");
           return false;
-        } else {
-          return true;
         }
+        return true;
       }
     </script>
   </head>
