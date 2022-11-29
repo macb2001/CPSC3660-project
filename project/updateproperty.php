@@ -11,8 +11,8 @@ if (isset($_COOKIE["username"])) {
   $askingprice = $_POST['askingprice'];
   $sold = $_POST['sold'];
   $const_date = $_POST['constdate'];
-  $bedroom = $_POST['bedroom'];
-  $bathroom = $_POST['bathroom'];
+  $bedroom = $_POST['bedrooms'];
+  $bathroom = $_POST['bathrooms'];
   $saleprice = $_POST['saleprice'];
   $address = $_POST['address'];
 
@@ -30,9 +30,16 @@ if (isset($_COOKIE["username"])) {
   }
 
   $sql = "UPDATE PROPERTY
-    SET a_id = '$aid', c_id = '$cid', address = '$address', square_foot = '$square_foot',
-    asking_price = '$askingprice', sold = '$sold', const_date = '$const_date', bedroom = '$bedroom',
-    sale_price = '$saleprice', b
+    SET a_id = '$aid',
+        c_id = '$cid',
+        address = '$address',
+        square_foot = '$square_foot',
+        asking_price = '$askingprice',
+        sold = '$sold',
+        const_date = '$const_date',
+        bedroom = '$bedroom',
+        sale_price = '$saleprice',
+        bathroom = '$bathroom'
     WHERE a_id = '$gaid'
     AND c_id = '$gcid'
     AND address = '$gaddress';";
