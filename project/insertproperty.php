@@ -28,7 +28,7 @@ if (isset($_COOKIE["username"])) {
 
   $sql = "INSERT INTO PROPERTY
     VALUES ('$address', '$aid', '$cid', '$sqrft', '$askingprice', '$sold',
-    '$constdate', '$bedrooms', '$saleprice', '$bthrooms');";
+    '$constdate', '$bedrooms', '$saleprice', '$bathrooms');";
     if($conn->query($sql)) {
       $id = $conn->insert_id;
 

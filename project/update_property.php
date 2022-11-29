@@ -30,10 +30,13 @@
 							$result = $conn->query($sql);
 							$row = $result->fetch_assoc();
 							$old_askingprice = $row['asking_price'];
+							$old_saleprice = $row['sale_price'];
 							$old_const_date = $row['const_date'];
 							$old_bedroom = $row['bedroom'];
 							$old_bath = $row['bathroom'];
-							
+							$old_squarefoot = $row['square_foot'];
+							$old_sold = $row['sold'];
+
 							}
 
 							$sql = "SELECT id, name FROM CLIENT, PERSON WHERE id = c_id;";
@@ -85,13 +88,17 @@
 							Address: <input type=text name='address' size=20 value = '$gaddress' required required><br><br>
 							Asking Price: $<input type=number name='askingprice' value = '$old_askingprice' size=20 min = '0' required><br><br>
 							<div = 'soldBox'>
-								<input type='checkbox' id='sold' name='sold' onclick='promptSold(this)''>
+								<input type='checkbox' id='sold' name='sold' ";
+								if($old_sold){
+									echo"checked";
+								}
+								echo " onclick='promptSold(this)''>
 									<label for='sold'>Sold</label><br>
-							</div><br>
-							<div id = 'salepricePrompt' style = 'display: none'>
-								Sale Price: $<input type=number name='saleprice' id = 'saleprice' size=20 min = '0'><br><br>
-							</div>
-							Squarefootage: <input type=number name='sqrft' size=20 min = '0' required>
+
+
+								Sale Price: $<input type=number name='saleprice' id = 'saleprice' value = '$old_saleprice' size=20 min = '0'><br><br>
+
+							Squarefootage: <input type=number name='sqrft'value = '$old_squarefoot' size=20 min = '0' required>
 								<label>sq. ft.</label><br><br>
 							Number of Beds: <input type=number name='bedrooms' value = '$old_bedroom'size=20 min = '0' required><br><br>
 							Number of Baths: <input type=number name='bathrooms' value = '$old_bath' size=20 min = '0' required><br><br>
