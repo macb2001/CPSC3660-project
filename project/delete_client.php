@@ -7,9 +7,9 @@
 	  body {background-color: #f5f5dc;}
 	</style>
 	<center>
-    <h1>Fake Street Realty</h1>
+		<h1>Fake Street Realty</h1>
+		<h3>Delete Agent</h3>
 	<body>
-		<h1>Delete Client</h1>
 <?php
 if (isset($_COOKIE["username"])) {
 	$username = $_COOKIE["username"];
