@@ -2,21 +2,24 @@
   <head>
     <title>Fake Street Realty</title>
   </head>
+  <style>
+    button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+    body {background-color: #f5f5dc;}
+  </style>
 
   <center>
     <h1>Fake Street Realty</h1>
     <body>
-      <p>Select from one of the following operations:</p>
-      <ul>
-        <button type="button"><a href="insert_person.php">Insert a new Client or Agent</a></button>
-        <li><a href="select_agent.php">list Agents</a></li>
-        <li><a href="select_client.php">list Clients</a></li>
-        <li><a href="insert_property.php">Insert a Property</a></li>
-        <li><a href="agent_properties.php">List Properties by Agent</a></li>
-        <li><a href="client_properties.php">List Properties by Client</a></li>
-        <li><a href="select_property.php">List all Properties</a></li>
-      </ul>
-      <p><a href="logout.php">Logout</a></p>
+      <h3>Select from one of the following operations:</h3>
+      <button onclick="window.location.href='insert_person.php';">Insert a new Client or Agent</button>
+      <button onclick="window.location.href='select_agent.php';">List Agents</button>
+      <button onclick="window.location.href='select_client.php';">List Clients</button>
+      <button onclick="window.location.href='insert_property.php';">Insert a Property</button>
+      <button onclick="window.location.href='agent_properties.php';">List Properties by Agent</button>
+      <button onclick="window.location.href='client_properties.php';">List Properties by Client</button>
+      <button onclick="window.location.href='select_property.php';">List all Properties</button>
+      <br>
+      <button onclick="window.location.href='logout.php';">Logout</button>
     </body>
   </center>
 </html>
