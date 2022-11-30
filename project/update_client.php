@@ -102,7 +102,7 @@ if (isset($_COOKIE["username"])) {
 
       <!-- submission button -->
       <div id = 'submit'>
-		     <input type = submit value = 'Submit' name='submit'>
+		     <input type = submit value = 'Submit'> submit </button>
       </div>
 		</form>
 	";
