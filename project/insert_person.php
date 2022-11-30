@@ -41,8 +41,7 @@
 			<form action="insertperson.php" method=post onsubmit="return validateSubmission()">
 	      <div id = attributes>
 	        <label for="name">Name:</label>
-	          <input type = text name = "name" id = "name" size = "10" required>
-							<label></label><br><br>
+	          <input type = text name = "name" id = "name" size = "10" required><br><br>
 	        <label for="dob">Date of Birth:</label>
 	          <input type = date name = "dob" id = "dob" size = "10" required><br><br>
 	        <label for="address">Address:</label>
