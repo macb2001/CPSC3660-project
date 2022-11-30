@@ -95,7 +95,7 @@
              }
 
              echo "</table><br /><br />\n";
-             echo "<button onclick='window.location.href=\"main.php\";'>Back</button>";
+             echo "<button onclick='window.location.href=\"agent_properties.php\";'>Back</button>";
 
            } else {
              $err = $conn->errno;

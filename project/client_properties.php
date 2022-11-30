@@ -11,7 +11,7 @@
 
 	<center>
 		<h1>Fake Street Realty</h1>
-	  <h3>List Properties by Agent</h3>
+	  <h3>List Properties by Client</h3>
 		<body>
     <form action="clientproperties.php" method=post>
     	<?php

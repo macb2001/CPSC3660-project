@@ -10,7 +10,7 @@
 
 	<center>
 		<h1>Fake Street Realty</h1>
-	  <h3>List Properties by Agent</h3>
+	  <h3>List Properties by Client</h3>
 		<body>
 			<?php
         if (isset($_COOKIE["username"])) {
@@ -97,7 +97,7 @@
              }
 
              echo "</table><br /><br />\n";
-             echo "<button onclick='window.location.href=\"main.php\";'>Back</button>";
+             echo "<button onclick='window.location.href=\"client_properties.php\";'>Back</button>";
 
            } else {
              $err = $conn->errno;
