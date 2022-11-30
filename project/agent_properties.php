@@ -5,6 +5,7 @@
 
 	<style>
     input {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+		button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
     body {background-color: #f5f5dc;}
   </style>
 
@@ -44,6 +45,7 @@
       }
     ?>
   <input type=submit name="submit" value="List"></form>
+	<button onclick='window.location.href="main.php"'>Back</button>
 
 </body>
 </center>
