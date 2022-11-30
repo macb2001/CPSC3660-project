@@ -77,6 +77,7 @@ if (isset($_COOKIE["username"])) {
 		     <button type = submit value = 'Submit'>submit </button>
       </div>
 		</form>
+		<button onclick='history.back()'>Back</button>
 	";
 	} else {
 	$err = $conn->errno;
