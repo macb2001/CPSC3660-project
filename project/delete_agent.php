@@ -79,6 +79,7 @@ if (isset($_COOKIE["username"])) {
 		     <input type = submit value = 'Confirm Delete' name='submit'>
       </div>
 		</form>
+		<button onclick='history.back()'>Back</button>
 	";
 	} else {
 	$err = $conn->errno;
