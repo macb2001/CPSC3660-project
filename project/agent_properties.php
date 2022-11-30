@@ -24,7 +24,7 @@
           exit;
         }
         $sql = "SELECT id, name FROM AGENT, PERSON WHERE id = a_id;";
-        echo "Select an Agent <select name='aid' id='aid'>";
+        echo "Select an Agent <select name='aid' id='aid' required>";
 
         if($conn->query($sql)) {
           $result = $conn->query($sql);
