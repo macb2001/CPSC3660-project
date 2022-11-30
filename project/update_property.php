@@ -7,7 +7,8 @@
 	  body {background-color: #f5f5dc;}
 	</style>
 	<center>
-		<h1>Update Property</h1>
+		<h1>Fake Street Realty</h1>
+		<h3>Update Property</h3>
 		<body>
 
 
