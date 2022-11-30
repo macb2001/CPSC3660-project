@@ -14,7 +14,7 @@
         <br>
         MySQL password: <input type=password name="password" size=8>
         <br><br>
-        <input type=submit value="Login">
+        <button type=submit> login </button>
       </form>
     </body>
   </center>
