@@ -47,7 +47,7 @@
             <td>{$data['dob']}</td>
             <td>{$data['address']}</td>
             <td>{$data['phone']}</td>
-            <td>{$data['commission']}</td>
+            <td>{$data['commission']}%</td>
             <td><button onclick='window.location.href=\"update_agent.php?id={$data['a_id']}\";'>Update</button></td>
             <td><button onclick='window.location.href=\"delete_agent.php?id={$data['a_id']}\";'>Delete</button></td>
           </tr>
