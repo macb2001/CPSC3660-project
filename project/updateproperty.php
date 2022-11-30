@@ -52,8 +52,16 @@ if (isset($_COOKIE["username"])) {
       echo "<p>Record updated successfully.\n</p>";
       echo "<a href='main.php'><button>back</button></a>";
     } else {
-    $err = $conn->errno;
-    echo "<p>MySQL error code $err </p>";
+      $err = $conn->errno;
+      if ($err == 1064) {
+        echo "<p>There is an issue with your input.
+        Make sure you don't have any apostrophes or other control characters.</p>";
+      } else if ($err == 1062){
+          echo "<p>That property already exists.</p>";
+      } else {
+        echo "<p>MySQL error code $err </p>";
+      }
+      echo "<button onclick='history.back()'>Back</button>";
   }
 
 } else {
