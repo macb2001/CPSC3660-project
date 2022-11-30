@@ -24,7 +24,7 @@
           exit;
         }
         $sql = "SELECT id, name FROM CLIENT, PERSON WHERE id = c_id;";
-        echo "Select a Client <select name='cid' id='cid'>";
+        echo "Select a Client <select name='cid' id='cid' required>";
 
         if($conn->query($sql)) {
           $result = $conn->query($sql);

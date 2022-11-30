@@ -50,7 +50,7 @@ if (isset($_COOKIE["username"])) {
 
     if($conn->query($sql)) {
       echo "<p>Record updated successfully.\n</p>";
-      echo "<a href='main.php'>back</a>";
+      echo "<a href='main.php'><button>back</button></a>";
     } else {
     $err = $conn->errno;
     echo "<p>MySQL error code $err </p>";
