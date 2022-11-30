@@ -8,7 +8,7 @@
     <body>
       <p>Select from one of the following operations:</p>
       <ul>
-        <li><a href="insert_person.php">Insert a new Client or Agent</a></li>
+        <button type="button"><a href="insert_person.php">Insert a new Client or Agent</a></button>
         <li><a href="select_agent.php">list Agents</a></li>
         <li><a href="select_client.php">list Clients</a></li>
         <li><a href="insert_property.php">Insert a Property</a></li>
