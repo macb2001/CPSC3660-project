@@ -69,8 +69,9 @@
 	      <!-- submissio button -->
 	      <div id = "submit">
 			     <button type = submit value = "Submit"> submit </button>
+				 </form>
 	      </div>
-			</form>
+
 
 		</body>
 	</center>
