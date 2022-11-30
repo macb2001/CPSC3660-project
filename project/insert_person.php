@@ -44,11 +44,11 @@
 	          <input type = text name = "name" id = "name" size = "10" required>
 							<label>*</label><br><br>
 	        <label for="dob">Date of Birth:</label>
-	          <input type = date name = "dob" id = "dob" size = "10"><br><br>
+	          <input type = date name = "dob" id = "dob" size = "10" required><br><br>
 	        <label for="address">Address:</label>
-	          <input type = text name = "address" id = "address" size = "10"><br><br>
+	          <input type = text name = "address" id = "address" size = "10" required><br><br>
 	        <label for="phone">Phone Number:</label>
-	          <input type = tel name = "phone" id = "phone" size = "10" maxlength = "11" minlength = "7"><br><br>
+	          <input type = tel name = "phone" id = "phone" size = "10" maxlength = "11" minlength = "7" required><br><br>
 	      </div>
 
 	      <!-- Client/agent check boxes -->
