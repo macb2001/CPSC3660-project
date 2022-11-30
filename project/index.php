@@ -11,7 +11,9 @@
     <body>
       <form action="setpass.php" method=post>
         MySQL username: <input type=text name="username" size=8>
+        <br>
         MySQL password: <input type=password name="password" size=8>
+        <br><br>
         <input type=submit value="Login">
       </form>
     </body>
