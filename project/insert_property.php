@@ -93,7 +93,7 @@
 				Number of Baths: <input type=number name="bathrooms" size=20 min = "0" required><br><br>
 				Date constructed: <input type=date name="constdate" size=20 required><br><br>
 
-				<input type=submit name="submit" value="Submit"></form>
+				<button type=submit>Submit</button></form>
 		</body>
 	</center>
 </html>
