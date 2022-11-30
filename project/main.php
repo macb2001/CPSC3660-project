@@ -19,7 +19,7 @@
       <button onclick="window.location.href='client_properties.php';">List Properties by Client</button>
       <button onclick="window.location.href='select_property.php';">List all Properties</button>
       <br>
-      <button onclick="window.location.href='logout.php';">Logout</button>
+      <button style="margin-top: 300px" onclick="window.location.href='logout.php';">Logout</button>
     </body>
   </center>
 </html>
