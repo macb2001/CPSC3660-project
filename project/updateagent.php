@@ -48,10 +48,16 @@ if (isset($_COOKIE["username"])) {
   $sql = "UPDATE AGENT SET commission = '$comm' WHERE a_id = '$id';";
     if($conn->query($sql)) {
       echo "<p>Record updated successfully.\n</p>";
-      echo "<a href='main.php'>back</a>";
+      echo "<a href='main.php'><button>back</button></a>";
     } else {
-    $err = $conn->errno;
-    echo "<p>MySQL error code $err </p>";
+      $err = $conn->errno;
+      if ($err == 1064) {
+        echo "<p>There is an issue with your input.
+        Make sure you don't have any apostrophes or other control characters.</p>";
+      } else {
+        echo "<p>MySQL error code $err </p>";
+      }
+      echo "<button onclick='history.back()'>Back</button>";
   }
 } else {
   echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
