@@ -2,7 +2,8 @@
 	<head>
     <title>Fake Street Realty</title>
   </head>
-
+	<center>
+    <h1>Fake Street Realty</h1>
 	<body>
 		<h1>Delete Agent</h1>
 <?php
@@ -84,4 +85,5 @@ if (isset($_COOKIE["username"])) {
 }
 ?>
 	</body>
+</center>
 </html>

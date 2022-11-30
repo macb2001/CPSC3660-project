@@ -3,6 +3,7 @@
   <title>Fake Street Realty</title>
 </head>
 <center>
+    <h1>Fake Street Realty</h1>
 <body>
   <?php
 
