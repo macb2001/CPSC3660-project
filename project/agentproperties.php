@@ -3,7 +3,7 @@
 		<title>Fake Street Realty</title>
 	</head>
 	<style>
-		button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+		button {height:30px;width:70px;font-size: 10px;color: black ;background-color: #1F70C1;}
 		body {background-color: #f5f5dc;}
 	</style>
 	<center>
@@ -88,14 +88,14 @@
                   <td>{$data['bedroom']}</td>
                   <td>$sp</td>
                   <td>{$data['bedroom']}</td>
-                  <td><a href='update_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Update</a></td>
-                  <td><a href='delete_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}'>Delete</a></td>
+									<td><button onclick='window.location.href=\"update_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}\";'>Update</button></td>
+			            <td><button onclick='window.location.href=\"delete_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}\";'>Delete</button></td>
                 </tr>
                ";
              }
 
              echo "</table><br /><br />\n";
-             echo "<button onclick='window.location.href=\"agent_properties.php\";'>Back</button>";
+             echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='window.location.href=\"agent_properties.php\";'>Back</button>";
 
            } else {
              $err = $conn->errno;
