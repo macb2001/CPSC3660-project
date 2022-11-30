@@ -29,7 +29,10 @@
       }
     </script>
   </head>
-
+	<style>
+    button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+    body {background-color: #f5f5dc;}
+  </style>
 	<center>
 		<h1>Fake Street Realty</h1>
 	  <h1>Insert Client/Agent</h1>
