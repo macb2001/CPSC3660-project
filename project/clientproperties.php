@@ -3,6 +3,11 @@
 		<title>Fake Street Realty</title>
 	</head>
 
+	<style>
+    button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+    body {background-color: #f5f5dc;}
+  </style>
+
 	<center>
 		<body>
 			<?php
@@ -90,7 +95,7 @@
              }
 
              echo "</table><br /><br />\n";
-             echo "<a href='main.php'>Back</a>";
+             echo "<button onclick='window.location.href=\"main.php\";'>Back</button>";
 
            } else {
              $err = $conn->errno;

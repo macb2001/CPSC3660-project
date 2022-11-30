@@ -93,7 +93,7 @@
              }
 
              echo "</table><br /><br />\n";
-             echo "<a href='main.php'>Back</a>";
+             echo "<button onclick='window.location.href=\"main.php\";'>Back</button>";
 
            } else {
              $err = $conn->errno;

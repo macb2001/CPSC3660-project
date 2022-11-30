@@ -3,6 +3,11 @@
 		<title>Fake Street Realty</title>
 	</head>
 
+	<style>
+    input {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+    body {background-color: #f5f5dc;}
+  </style>
+
 	<center>
 		<h1>List Properties By Agent</h1>
 		<body>
