@@ -95,7 +95,7 @@
              }
 
              echo "</table><br /><br />\n";
-             echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='window.location.href=\"agent_properties.php\";'>Back</button>";
+             echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='history.back()'>Back</button>";
 
            } else {
              $err = $conn->errno;
