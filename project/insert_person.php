@@ -31,6 +31,7 @@
   </head>
 
 	<center>
+		<h1>Fake Street Realty</h1>
 	  <h1>Insert Client/Agent</h1>
 		<body>
 	    <!-- Attribute inputs -->
