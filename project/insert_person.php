@@ -72,7 +72,7 @@
 				 </form>
 	      </div>
 			</form>
-			<button onclick='window.location.href="main.php"'>Back</button>
+			<button onclick='history.back()'>Back</button>
 		</body>
 	</center>
 </html>
