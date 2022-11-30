@@ -113,7 +113,8 @@
 							<input type=hidden name='gcid' size=20 value = '$gcid' required required>
 
 
-							<input type=submit name='submit' value='Submit'></form>";
+							<button type=submit name='submit'>Submit</button>
+							</form>";
 
 							?>
 
