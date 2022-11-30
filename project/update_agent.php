@@ -1,11 +1,12 @@
 <html>
 	<head>
     <title>Fake Street Realty</title>
-  </head>
+	  </head>
 	<style>
     button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
     body {background-color: #f5f5dc;}
   </style>
+	<center>
 	<body>
 		<h1>Update Agent</h1>
 <?php
@@ -85,4 +86,5 @@ if (isset($_COOKIE["username"])) {
 }
 ?>
 	</body>
+</center>
 </html>

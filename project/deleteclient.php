@@ -41,7 +41,7 @@ if (isset($_COOKIE["username"])) {
     if ($choice == 2) {
       $sql = "DELETE FROM AGENT WHERE a_id = '$id';";
         if($conn->query($sql)) {
-          echo "<p>Client record deleted successfully.</p>";
+          echo "<p>Agent record deleted successfully.</p>";
         } else {
         $err = $conn->errno;
         echo "<p>MySQL error code $err </p>";
