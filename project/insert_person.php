@@ -71,6 +71,7 @@
 			     <button type = submit value = "Submit"> submit </button>
 	      </div>
 			</form>
+			<button onclick='window.location.href="main.php"'>Back</button>
 
 		</body>
 	</center>

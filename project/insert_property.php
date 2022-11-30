@@ -95,6 +95,7 @@
 				Date constructed: <input type=date name="constdate" size=20 required><br><br>
 
 				<button type=submit>Submit</button></form>
+				<button onclick='window.location.href="main.php"'>Back</button>
 		</body>
 	</center>
 </html>
