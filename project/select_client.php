@@ -28,7 +28,7 @@
     if($conn->query($sql)) {
       $result = $conn->query($sql);
 	     echo "
-        <table border='1'>
+        <table border='6'>
           <tr>
             <th>ID</th>
             <th>Name</th>
