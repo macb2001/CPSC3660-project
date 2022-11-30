@@ -35,7 +35,12 @@ if (isset($_COOKIE["username"])) {
       echo "<p>Agent record deleted successfully.</p>";
     } else {
     $err = $conn->errno;
-    echo "<p>MySQL error code $err </p>";
+    if ($err == 1451) {
+      echo "<p>This Agent is still assigned to a property!<br />
+        Please delete the property first, then try again.</p>";
+    } else {
+      echo "<p>MySQL Error $err</p>";
+    }
   }
   if ($choice > 0) {
     if ($choice == 2) {
@@ -43,16 +48,26 @@ if (isset($_COOKIE["username"])) {
         if($conn->query($sql)) {
           echo "<p>Client record deleted successfully.</p>";
         } else {
-        $err = $conn->errno;
-        echo "<p>MySQL error code $err </p>";
+          $err = $conn->errno;
+          if ($err == 1451) {
+            echo "<p>This Client is still assigned to a property!<br />
+              Please delete the property first, then try again</p>";
+          } else {
+            echo "<p>MySQL Error $err</p>";
+          }
       }
     }
     $sql = "DELETE FROM PERSON WHERE id = '$id';";
       if($conn->query($sql)) {
         echo "<p>Person record deleted successfully.</p>";
       } else {
-      $err = $conn->errno;
-      echo "<p>MySQL error code $err </p>";
+        $err = $conn->errno;
+        if ($err == 1451) {
+          echo "<p>This Person is still being referenced somewhere else!<br />
+            Please delete the other record first, then try again.</p>";
+        } else {
+          echo "<p>MySQL Error $err</p>";
+        }
     }
   }
   echo "<a href='main.php'>back</a>";
