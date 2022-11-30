@@ -49,7 +49,7 @@ if (isset($_COOKIE["username"])) {
 			<input type = hidden name = 'id' id = 'id' value = '$id'>
         <label for='name'>Name:</label>
           <input type = text name = 'name' id = 'name' size = '10' value = '$name' disabled>
-						<label>*</label><br><br>
+						<br><br>
         <label for='dob'>Date of Birth:</label>
           <input type = date name = 'dob' id = 'dob' size = '10' value = '$dob' disabled><br><br>
         <label for='address'>Address:</label>
@@ -71,7 +71,7 @@ if (isset($_COOKIE["username"])) {
 
       <!-- submission button -->
       <div id = 'submit'>
-		     <input type = submit value = 'Confirm Delete' name='submit'>
+		     <button type = submit>Confirm Delete</button>
       </div>
 		</form>
 		<button onclick='history.back()'>Back</button>
