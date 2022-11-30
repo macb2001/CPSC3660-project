@@ -7,6 +7,8 @@
 		body {background-color: #f5f5dc;}
 	</style>
 	<center>
+		<h1>Fake Street Realty</h1>
+	  <h3>List Properties by Agent</h3>
 		<body>
 			<?php
         if (isset($_COOKIE["username"])) {

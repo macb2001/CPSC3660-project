@@ -9,7 +9,8 @@
   </style>
 
 	<center>
-		<h1>List Properties By Client</h1>
+		<h1>Fake Street Realty</h1>
+	  <h3>List Properties by Agent</h3>
 		<body>
     <form action="clientproperties.php" method=post>
     	<?php

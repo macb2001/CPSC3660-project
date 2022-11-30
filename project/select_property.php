@@ -9,6 +9,8 @@
   </style>
 
 	<center>
+		<h1>Fake Street Realty</h1>
+	  <h3>List all Properties</h3>
 		<body>
 			<?php
 			if (isset($_COOKIE["username"])) {

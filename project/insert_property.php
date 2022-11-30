@@ -21,7 +21,8 @@
     body {background-color: #f5f5dc;}
   </style>
 	<center>
-		<h1>Add a Property</h1>
+		<h1>Fake Street Realty</h1>
+	  <h3>Insert Property</h3>
 		<body>
 
 

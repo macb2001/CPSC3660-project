@@ -7,7 +7,8 @@
   body {background-color: #f5f5dc;}
 </style>
 <center>
-    <h1>Fake Street Realty</h1>
+  <h1>Fake Street Realty</h1>
+  <h3>List Clients</h3>
 <body>
   <?php
 

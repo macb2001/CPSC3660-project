@@ -35,7 +35,7 @@
   </style>
 	<center>
 		<h1>Fake Street Realty</h1>
-	  <h1>Insert Client/Agent</h1>
+	  <h3>Insert Client/Agent</h3>
 		<body>
 	    <!-- Attribute inputs -->
 			<form action="insertperson.php" method=post onsubmit="return validateSubmission()">
