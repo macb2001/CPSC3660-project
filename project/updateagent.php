@@ -2,6 +2,10 @@
 <head>
   <title>Updating Agent</title>
 </head>
+<style>
+  button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
+  body {background-color: #f5f5dc;}
+</style>
 <body>
 <?php
 if (isset($_COOKIE["username"])) {
