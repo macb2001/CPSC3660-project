@@ -115,12 +115,12 @@
 
 
 							<button type=submit name='submit'>Submit</button>
-							</form>
-							<br><button onclick='history.back()'>Back</button>";
+							</form>"
+							;
 
 							?>
 
-
+							<br><button onclick='history.back()'>Back</button>
 
 		</body>
 	</center>
