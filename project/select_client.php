@@ -1,33 +1,44 @@
 <html>
+
 <head>
   <title>Fake Street Realty</title>
 </head>
 <style>
-  button {height:30px;width:70px;font-size: 10px;color: black ;background-color: #1F70C1;}
-  body {background-color: #f5f5dc;}
+  button {
+    height: 30px;
+    width: 70px;
+    font-size: 10px;
+    color: black;
+    background-color: #1F70C1;
+  }
+
+  body {
+    background-color: #f5f5dc;
+  }
 </style>
 <center>
   <h1>Fake Street Realty</h1>
   <h3>List Clients</h3>
-<body>
-  <?php
 
-  if (isset($_COOKIE["username"])) {
-    $username = $_COOKIE["username"];
-    $password = $_COOKIE["password"];
+  <body>
+    <?php
 
-    $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-    if($mysqli->connect_errno) {
-      echo "Connection Issue!";
-      exit;
-    }
+        if (isset($_COOKIE["username"])) {
+          $username = $_COOKIE["username"];
+          $password = $_COOKIE["password"];
 
-    $sql = "SELECT c_id, name, dob, address, phone FROM CLIENT, PERSON
+          $conn = new mysqli("vconroy.cs.uleth.ca", $username, $password, $username);
+          if ($mysqli->connect_errno) {
+            echo "Connection Issue!";
+            exit;
+          }
+
+          $sql = "SELECT c_id, name, dob, address, phone FROM CLIENT, PERSON
       WHERE c_id = id;";
 
-    if($conn->query($sql)) {
-      $result = $conn->query($sql);
-	     echo "
+          if ($conn->query($sql)) {
+            $result = $conn->query($sql);
+            echo "
         <table border='6'>
           <tr>
             <th>ID</th>
@@ -38,8 +49,8 @@
           </tr>
        ";
 
-       foreach ($result as $data) {
-         echo "
+            foreach ($result as $data) {
+              echo "
           <tr>
             <td>{$data['c_id']}</td>
             <td>{$data['name']}</td>
@@ -50,25 +61,25 @@
             <td><button onclick='window.location.href=\"delete_client.php?id={$data['c_id']}\";'>Delete</button></td>
           </tr>
          ";
-       }
+            }
 
-       echo "</table><br /><br />\n";
-       echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='history.back()'>Back</button>";
+            echo "</table><br /><br />\n";
+            echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='history.back()'>Back</button>";
 
-     } else {
-       $err = $conn->errno;
-       echo "<p>MySQL error code $err </p>";
-     }
+          } else {
+            $err = $conn->errno;
+            echo "<p>MySQL error code $err </p>";
+          }
 
-  } else {
-    echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
-  }
+        } else {
+          echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
+        }
 
-  if(isset($conn)) {
-    $conn = null;
-  }
-  ?>
-</body>
+        if (isset($conn)) {
+          $conn = null;
+        }
+        ?>
+  </body>
 </center>
 
 </html>

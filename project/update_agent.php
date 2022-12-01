@@ -1,50 +1,62 @@
 <html>
-	<head>
-    <title>Fake Street Realty</title>
-	  </head>
-	<style>
-    button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
-    body {background-color: #f5f5dc;}
-  </style>
-	<center>
-		<h1>Fake Street Realty</h1>
-		<h3>Update Agent</h3>
-	<body>
-<?php
-if (isset($_COOKIE["username"])) {
-	$username = $_COOKIE["username"];
-	$password = $_COOKIE["password"];
 
-	$conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-	if($mysqli->connect_errno) {
-		echo "Connection Issue!";
-		exit;
+<head>
+	<title>Fake Street Realty</title>
+</head>
+<style>
+	button {
+		height: 50px;
+		width: 300px;
+		font-size: 20px;
+		margin: 10px;
+		color: black;
+		background-color: #1F70C1;
 	}
 
-	$name = '';
-	$dob = NULL;
-	$address = '';
-	$phone = '';
-	$comm = 0;
-	$id = $_GET['id'];
-	$sql = "SELECT a_id, name, dob, address, phone, commission FROM AGENT, PERSON
+	body {
+		background-color: #f5f5dc;
+	}
+</style>
+<center>
+	<h1>Fake Street Realty</h1>
+	<h3>Update Agent</h3>
+
+	<body>
+		<?php
+        if (isset($_COOKIE["username"])) {
+	        $username = $_COOKIE["username"];
+	        $password = $_COOKIE["password"];
+
+	        $conn = new mysqli("vconroy.cs.uleth.ca", $username, $password, $username);
+	        if ($mysqli->connect_errno) {
+		        echo "Connection Issue!";
+		        exit;
+	        }
+
+	        $name = '';
+	        $dob = NULL;
+	        $address = '';
+	        $phone = '';
+	        $comm = 0;
+	        $id = $_GET['id'];
+	        $sql = "SELECT a_id, name, dob, address, phone, commission FROM AGENT, PERSON
 		WHERE a_id = id
 		AND a_id = '$id';";
 
-	if($conn->query($sql)) {
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
+	        if ($conn->query($sql)) {
+		        $result = $conn->query($sql);
+		        $row = $result->fetch_assoc();
 
-		$name = $row['name'];
-		$dob = $row['dob'];
-		$address = $row['address'];
-		$phone = $row['phone'];
-		$comm = $row['commission'];
+		        $name = $row['name'];
+		        $dob = $row['dob'];
+		        $address = $row['address'];
+		        $phone = $row['phone'];
+		        $comm = $row['commission'];
 
-		$cliCheckSql = "SELECT c_id FROM CLIENT WHERE c_id = '$id';";
-    $cliCheck = $conn->query($cliCheckSql);
+		        $cliCheckSql = "SELECT c_id FROM CLIENT WHERE c_id = '$id';";
+		        $cliCheck = $conn->query($cliCheckSql);
 
-  echo "
+		        echo "
 	<!-- Attribute inputs -->
 		<form action='updateagent.php' method=post>
       <div id = attributes>
@@ -64,29 +76,30 @@ if (isset($_COOKIE["username"])) {
         </div>
       </div>";
 
-			if ($cliCheck->num_rows == 0) {
-				echo "
+		        if ($cliCheck->num_rows == 0) {
+			        echo "
 				<label for='client'>Make this agent a client?</label>
 				<input type='checkbox' id='client' name='client'><br />";
-			} else {
-				echo "This agent is also a client, so updating their information
+		        } else {
+			        echo "This agent is also a client, so updating their information
 				here will update their information in the Client table as well.<br />";
-			}
-      echo "<!-- submission button -->
+		        }
+		        echo "<!-- submission button -->
       <div id = 'submit'>
 		     <button type = submit value = 'Submit'>submit </button>
       </div>
 		</form>
 		<button onclick='history.back()'>Back</button>
 	";
-	} else {
-	$err = $conn->errno;
-	echo "<p>MySQL error code $err </p>";
-	}
-}  else {
-	echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
-}
-?>
+	        } else {
+		        $err = $conn->errno;
+		        echo "<p>MySQL error code $err </p>";
+	        }
+        } else {
+	        echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
+        }
+        ?>
 	</body>
 </center>
+
 </html>

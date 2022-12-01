@@ -1,72 +1,84 @@
 <html>
-	<head>
-    <title>Fake Street Realty</title>
-		<!-- Javascript method to open commission dialog if box checked -->
-		<script type = "text/javascript">
-      function promptCommission(cbox) {
-				var input = document.getElementById("commissionPrompt");
-				if (agent.checked) {
-					commission.setAttribute("required", "");
-					input.style.display = "block";
-				} else {
-					if (commission.hasAttribute("required")) {
-						commission.removeAttribute("required");
-					}
-					input.style.display = "none";
-				}
-      }
-    </script>
 
-		<!-- If agent is checked, commission field is required -->
-    <script type = "text/javascript">
-      function validateSubmission() {
-				if (document.getElementById("agent").checked && commission.hasAttribute("required")) {
+<head>
+	<title>Fake Street Realty</title>
+	<!-- Javascript method to open commission dialog if box checked -->
+	<script type="text/javascript">
+		function promptCommission(cbox) {
+			var input = document.getElementById("commissionPrompt");
+			if (agent.checked) {
+				commission.setAttribute("required", "");
+				input.style.display = "block";
+			} else {
+				if (commission.hasAttribute("required")) {
 					commission.removeAttribute("required");
 				}
-      }
-		</script>
-  </head>
-	<style>
-		button {height:50px;width:300px;font-size: 20px; margin: 10px;color: black ;background-color: #1F70C1;}
-		body {background-color: #f5f5dc;}
-	</style>
-	<center>
-		<h1>Fake Street Realty</h1>
-		<h3>Update Client</h3>
-	<body>
-<?php
-if (isset($_COOKIE["username"])) {
-	$username = $_COOKIE["username"];
-	$password = $_COOKIE["password"];
+				input.style.display = "none";
+			}
+		}
+	</script>
 
-	$conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-	if($mysqli->connect_errno) {
-		echo "Connection Issue!";
-		exit;
+	<!-- If agent is checked, commission field is required -->
+	<script type="text/javascript">
+		function validateSubmission() {
+			if (document.getElementById("agent").checked && commission.hasAttribute("required")) {
+				commission.removeAttribute("required");
+			}
+		}
+	</script>
+</head>
+<style>
+	button {
+		height: 50px;
+		width: 300px;
+		font-size: 20px;
+		margin: 10px;
+		color: black;
+		background-color: #1F70C1;
 	}
-	$name = '';
-	$dob = NULL;
 
-	$address = '';
-	$phone = '';
-	$comm = 0;
-	$id = $_GET['id'];
-	$sql = "SELECT id, name, dob, address, phone FROM PERSON
+	body {
+		background-color: #f5f5dc;
+	}
+</style>
+<center>
+	<h1>Fake Street Realty</h1>
+	<h3>Update Client</h3>
+
+	<body>
+		<?php
+        if (isset($_COOKIE["username"])) {
+	        $username = $_COOKIE["username"];
+	        $password = $_COOKIE["password"];
+
+	        $conn = new mysqli("vconroy.cs.uleth.ca", $username, $password, $username);
+	        if ($mysqli->connect_errno) {
+		        echo "Connection Issue!";
+		        exit;
+	        }
+	        $name = '';
+	        $dob = NULL;
+
+	        $address = '';
+	        $phone = '';
+	        $comm = 0;
+	        $id = $_GET['id'];
+	        $sql = "SELECT id, name, dob, address, phone FROM PERSON
 		WHERE id = '$id';";
 
-	if($conn->query($sql)) {
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
+	        if ($conn->query($sql)) {
+		        $result = $conn->query($sql);
+		        $row = $result->fetch_assoc();
 
-		$name = $row['name'];
-		$dob = $row['dob'];
-		$address = $row['address'];
-		$phone = $row['phone'];
+		        $name = $row['name'];
+		        $dob = $row['dob'];
+		        $address = $row['address'];
+		        $phone = $row['phone'];
 
-		$agCheckSql = "SELECT a_id FROM AGENT WHERE a_id = '$id';";
-    $agCheck = $conn->query($agCheckSql);
+		        $agCheckSql = "SELECT a_id FROM AGENT WHERE a_id = '$id';";
+		        $agCheck = $conn->query($agCheckSql);
 
-  echo "
+		        echo "
 	<!-- Attribute inputs -->
 		<form action='updateclient.php' method=post>
       <div id = attributes>
@@ -80,16 +92,16 @@ if (isset($_COOKIE["username"])) {
         <label for='phone'>Phone Number:</label>
           <input type = tel name = 'phone' id = 'phone' size = '10' maxlength = '11' minlength = '7' value = '$phone'required><br><br>";
 
-					if ($agCheck->num_rows == 0) {
-						echo "
+		        if ($agCheck->num_rows == 0) {
+			        echo "
 						<label for='agent'>Make this client an agent?</label>
 						<input type='checkbox' id='agent' name='agent'
 						onclick='promptCommission(this)'><br />";
-					} else {
-						echo "This client is also an agent, so updating their information
+		        } else {
+			        echo "This client is also an agent, so updating their information
 						here will update their information in the Agent table as well.<br />";
-					}
-			echo "
+		        }
+		        echo "
 			<!-- agent commission input -->
 			<div id = 'commissionPrompt' style = 'display: none'>
 				<label for='commission'>Commission:</label>
@@ -107,14 +119,15 @@ if (isset($_COOKIE["username"])) {
 		</form>
 		<button onclick='history.back()'>Back</button>
 	";
-	} else {
-	$err = $conn->errno;
-	echo "<p>MySQL error code $err </p>";
-	}
-}  else {
-	echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
-}
-?>
+	        } else {
+		        $err = $conn->errno;
+		        echo "<p>MySQL error code $err </p>";
+	        }
+        } else {
+	        echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
+        }
+        ?>
 	</body>
 </center>
+
 </html>

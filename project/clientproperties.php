@@ -1,31 +1,42 @@
 <html>
-	<head>
-		<title>Fake Street Realty</title>
-	</head>
 
-	<style>
-    button {height:30px;width:70px;font-size: 10px;color: black ;background-color: #1F70C1;}
-    body {background-color: #f5f5dc;}
-  </style>
+<head>
+  <title>Fake Street Realty</title>
+</head>
 
-	<center>
-		<h1>Fake Street Realty</h1>
-	  <h3>List Properties by Client</h3>
-		<body>
-			<?php
+<style>
+  button {
+    height: 30px;
+    width: 70px;
+    font-size: 10px;
+    color: black;
+    background-color: #1F70C1;
+  }
+
+  body {
+    background-color: #f5f5dc;
+  }
+</style>
+
+<center>
+  <h1>Fake Street Realty</h1>
+  <h3>List Properties by Client</h3>
+
+  <body>
+    <?php
         if (isset($_COOKIE["username"])) {
           $username = $_COOKIE["username"];
           $password = $_COOKIE["password"];
 
-          $conn = new mysqli("vconroy.cs.uleth.ca",$username,$password,$username);
-          if($mysqli->connect_errno) {
+          $conn = new mysqli("vconroy.cs.uleth.ca", $username, $password, $username);
+          if ($mysqli->connect_errno) {
             echo "Connection Issue!";
             exit;
           }
           $client_id = $_POST['cid'];
 
           $name = "SELECT name FROM PERSON WHERE id = '$client_id';";
-          if($conn->query($name)) {
+          if ($conn->query($name)) {
             $nameResult = $conn->query($name);
             $row = $nameResult->fetch_assoc();
             $garbagename = $row['name'];
@@ -35,9 +46,9 @@
           $sql = "SELECT address, a_id, c_id, square_foot, asking_price, sold,
            const_date, bedroom, sale_price, bathroom FROM PROPERTY WHERE c_id = '$client_id';";
 
-          if($conn->query($sql)) {
+          if ($conn->query($sql)) {
             $result = $conn->query($sql);
-             echo "
+            echo "
               <table border='6'>
                 <tr>
                   <th>Address</th>
@@ -53,8 +64,8 @@
                 </tr>
              ";
 
-             foreach ($result as $data) {
-               if ($data['sold']) {
+            foreach ($result as $data) {
+              if ($data['sold']) {
                 $sold = 'Yes';
                 $sp = $data['sale_price'];
               } else {
@@ -65,20 +76,20 @@
               $c_name = '';
 
               $agSql = "SELECT name FROM PERSON WHERE id = '{$data['a_id']}';";
-              if($conn->query($agSql)) {
+              if ($conn->query($agSql)) {
                 $agResult = $conn->query($agSql);
                 $row = $agResult->fetch_assoc();
                 $a_name = $row['name'];
               }
 
               $cliSql = "SELECT name FROM PERSON WHERE id = '{$data['c_id']}';";
-              if($conn->query($cliSql)) {
+              if ($conn->query($cliSql)) {
                 $cliResult = $conn->query($cliSql);
                 $row = $cliResult->fetch_assoc();
                 $c_name = $row['name'];
               }
 
-               echo "
+              echo "
                 <tr>
                   <td>{$data['address']}</td>
                   <td>$c_name</td>
@@ -94,15 +105,15 @@
 			            <td><button onclick='window.location.href=\"delete_property.php?aid={$data['a_id']}&cid={$data['c_id']}&address={$data['address']}\";'>Delete</button></td>
                 </tr>
                ";
-             }
+            }
 
-             echo "</table><br /><br />\n";
-             echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='history.back()'>Back</button>";
+            echo "</table><br /><br />\n";
+            echo "<button style = \"height:50px;width:300px;font-size: 20px; margin: 10px;\" onclick='history.back()'>Back</button>";
 
-           } else {
-             $err = $conn->errno;
-             echo "<p>MySQL error code $err </p>";
-           }
+          } else {
+            $err = $conn->errno;
+            echo "<p>MySQL error code $err </p>";
+          }
 
 
 
@@ -110,10 +121,11 @@
           echo "<h3>You are not logged in!</h3><p> <a href=\"index.php\">Login First</a></p>";
         }
 
-        if(isset($conn)) {
+        if (isset($conn)) {
           $conn = null;
         }
-      ?>
-    </body>
-  </center>
+        ?>
+  </body>
+</center>
+
 </html>
