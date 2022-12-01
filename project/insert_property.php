@@ -106,6 +106,7 @@
 
                 <button type=submit>Submit</button>
         </form>
+        <br>
         <button onclick='history.back()'>Back</button>
     </body>
 </center>

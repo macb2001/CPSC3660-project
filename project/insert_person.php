@@ -79,7 +79,7 @@
 
                 <!-- submissio button -->
                 <div id="submit">
-                    <button type=submit value="Submit"> submit </button>
+                    <button type=submit value="Submit"> Submit </button>
         </form>
         </div>
         </form>
