@@ -100,12 +100,11 @@
             echo "
 							Address: <input type=text name='address' size=20 value = '$gaddress' required required><br><br>
 							Asking Price: $<input type=number name='askingprice' value = '$old_askingprice' size=20 min = '0' required><br><br>
-							<div = 'soldBox'>
 								<input type='checkbox' id='sold' name='sold' ";
             if ($old_sold) {
 	            echo "checked";
             }
-            echo " onclick='promptSold(this)''>
+            echo ">
 									<label for='sold'>Sold</label><br>
 
 
